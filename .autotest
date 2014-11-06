@@ -1,0 +1,5 @@
+Autotest.add_hook :initialize do |at|
+  at.add_mapping(/(.*).rb/, true) do |filename, matchdata|
+    ["spec/#{matchdata[1]}_spec.rb"]
+  end
+end
